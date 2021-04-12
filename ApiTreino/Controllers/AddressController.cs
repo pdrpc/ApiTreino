@@ -49,7 +49,7 @@ namespace ApiTreino.Controllers
         public void Put([FromBody] Address address)
         {
             db.Entry(address).State = EntityState.Modified;
-            db.SaveChanges(); ;
+            db.SaveChanges();
         }
 
         // DELETE: api/Address/5
