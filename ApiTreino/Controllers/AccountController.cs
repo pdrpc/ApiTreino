@@ -30,6 +30,16 @@ namespace ApiTreino.Controllers
         {
         }
 
+        private static UserInfoViewModel GetJWTContainerModel(string name, string email){
+            return new UserInfoViewModel()
+            {
+                Claims = new Claim[] {
+                    new Claim(ClaimTypes.Name, name),
+                    new Claim(ClaimTypes.Email, email)
+                }
+            };
+        }
+
         public AccountController(ApplicationUserManager userManager,
             ISecureDataFormat<AuthenticationTicket> accessTokenFormat)
         {

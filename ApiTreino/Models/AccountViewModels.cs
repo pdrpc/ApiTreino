@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace ApiTreino.Models
 {
@@ -32,6 +33,15 @@ namespace ApiTreino.Models
         public bool HasRegistered { get; set; }
 
         public string LoginProvider { get; set; }
+
+        public Claim[] Claims{ get; set; }
+
+        public int ExpireMinutes { get; set; }
+
+        public string SecurityAlgorithm { get; set; }
+
+        public string SecreKey { get; set; } = "WES4QUZelTu4ZuKKO7a6ZpgwTxbCfOIN";
+
     }
 
     public class UserLoginInfoViewModel
