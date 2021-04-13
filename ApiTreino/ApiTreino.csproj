@@ -212,9 +212,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202104091822448_AddressMigration.cs" />
-    <Compile Include="Migrations\202104091822448_AddressMigration.Designer.cs">
-      <DependentUpon>202104091822448_AddressMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104131349250_ForeignKey.cs" />
+    <Compile Include="Migrations\202104131349250_ForeignKey.Designer.cs">
+      <DependentUpon>202104131349250_ForeignKey.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -318,8 +318,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104091822448_AddressMigration.resx">
-      <DependentUpon>202104091822448_AddressMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104131349250_ForeignKey.resx">
+      <DependentUpon>202104131349250_ForeignKey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

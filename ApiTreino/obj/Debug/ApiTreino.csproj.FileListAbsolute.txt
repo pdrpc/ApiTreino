@@ -135,5 +135,5 @@ C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.csproj.CoreC
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.csproj.CopyComplete
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.dll
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.pdb
-C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.Migrations.AddressMigration.resources
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.Migrations.ForeignKey.resources
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.csproj.GenerateResource.cache

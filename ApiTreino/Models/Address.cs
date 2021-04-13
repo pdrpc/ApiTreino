@@ -43,6 +43,11 @@ namespace ApiTreino.Models
 
         [JsonProperty("siafi")]
         public long Siafi { get; set; }
+        
+        public string Id { get; set; }
+
+        [ForeignKey("Id")]
+        public virtual ApplicationUser User { get; set; }
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ApiTreino.Models;
 using ApiTreino.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,6 +12,8 @@ using System.Web.Http;
 
 namespace ApiTreino.Controllers
 {
+
+    [Authorize]
     public class AddressController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -20,7 +23,7 @@ namespace ApiTreino.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            return Ok(db.Address.ToList());
+            return Ok(db.Address.Include(a=> a.User).ToList());
         }
 
         // GET: api/Address/5
@@ -28,6 +31,14 @@ namespace ApiTreino.Controllers
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
+            var userId = RequestContext.Principal.Identity.GetUserId();
+            if (db.Address.Find(id) == null)
+            {
+                return BadRequest();
+            }
+            if (db.Address.Find(id).Id != userId) {
+                return Unauthorized();
+            }
             return Ok(db.Address.Find(id));
         }
 
@@ -38,6 +49,7 @@ namespace ApiTreino.Controllers
         {
             var address = new Address();
             address = await ApiRequest.SendAsync($"{cep}/json");
+            address.Id = RequestContext.Principal.Identity.GetUserId();
             db.Address.Add(address);
             db.SaveChanges();
 
@@ -46,19 +58,40 @@ namespace ApiTreino.Controllers
 
         // PUT: api/Address/5
         [HttpPut]
-        public void Put([FromBody] Address address)
+        public IHttpActionResult Put([FromBody] Address address)
         {
+            var userId = RequestContext.Principal.Identity.GetUserId();
+            var dbAddress = db.Address.AsNoTracking().FirstOrDefault(a => a.AddressId == address.AddressId);
+            address.Id = dbAddress.Id;
+            if (dbAddress == null) {
+                return BadRequest();
+            }
+            if (dbAddress.Id != userId) {
+                return Unauthorized();
+            }
             db.Entry(address).State = EntityState.Modified;
             db.SaveChanges();
+            return Ok();
         }
 
         // DELETE: api/Address/5
         [Route("api/address/{id}")]
         [HttpDelete]
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            var userId = RequestContext.Principal.Identity.GetUserId();
+            var dbAddress = db.Address.FirstOrDefault(a => a.AddressId == id);
+            if (dbAddress == null)
+            {
+                return BadRequest();
+            }
+            if (dbAddress.Id != userId)
+            {
+                return Unauthorized();
+            }
             db.Address.Remove(db.Address.Find(id));
             db.SaveChanges();
+            return Ok();
         }
     }
 }
