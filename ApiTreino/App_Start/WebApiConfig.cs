@@ -12,11 +12,13 @@ namespace ApiTreino
     {
         public static void Register(HttpConfiguration config)
         {
+            config.EnableCors();
             // Configuração e serviços de API Web
             // Configure a API Web para usar somente a autenticação de token de portador.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
+            
             // Rotas de API Web
             config.MapHttpAttributeRoutes();
 

@@ -19,15 +19,15 @@ namespace ApiTreino.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Address
-        [Route("")]
+        [Route("api/Address")]
         [HttpGet]
         public IHttpActionResult Get()
         {
-            return Ok(db.Address.Include(a=> a.User).ToList());
+            return Ok(db.Address.Include(a => a.User).ToList());
         }
 
         // GET: api/Address/5
-        [Route("{id}")]
+        [Route("api/Adress/{id}")]
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
@@ -36,14 +36,15 @@ namespace ApiTreino.Controllers
             {
                 return BadRequest();
             }
-            if (db.Address.Find(id).Id != userId) {
+            if (db.Address.Find(id).Id != userId)
+            {
                 return Unauthorized();
             }
             return Ok(db.Address.Find(id));
         }
 
         // POST: api/Address
-        
+
         [HttpPost]
         public async Task<IHttpActionResult> Post(string cep)
         {
@@ -63,10 +64,12 @@ namespace ApiTreino.Controllers
             var userId = RequestContext.Principal.Identity.GetUserId();
             var dbAddress = db.Address.AsNoTracking().FirstOrDefault(a => a.AddressId == address.AddressId);
             address.Id = dbAddress.Id;
-            if (dbAddress == null) {
+            if (dbAddress == null)
+            {
                 return BadRequest();
             }
-            if (dbAddress.Id != userId) {
+            if (dbAddress.Id != userId)
+            {
                 return Unauthorized();
             }
             db.Entry(address).State = EntityState.Modified;
