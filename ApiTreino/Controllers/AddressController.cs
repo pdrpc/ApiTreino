@@ -19,7 +19,6 @@ namespace ApiTreino.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: api/Address
-        [Route("api/Address")]
         [HttpGet]
         public IHttpActionResult Get()
         {
@@ -27,7 +26,6 @@ namespace ApiTreino.Controllers
         }
 
         // GET: api/Address/5
-        [Route("api/Adress/{id}")]
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
@@ -78,7 +76,6 @@ namespace ApiTreino.Controllers
         }
 
         // DELETE: api/Address/5
-        [Route("api/address/{id}")]
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
