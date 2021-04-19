@@ -22,7 +22,8 @@ namespace ApiTreino.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            return Ok(db.Address.Include(a => a.User).ToList());
+            var userId = RequestContext.Principal.Identity.GetUserId();
+            return Ok(db.Address.Where(a => a.Id == userId).Include(a => a.User).ToList());
         }
 
         // GET: api/Address/5

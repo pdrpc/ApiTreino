@@ -138,5 +138,5 @@ C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.pdb
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.Migrations.ForeignKey.resources
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.csproj.GenerateResource.cache
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\System.Web.Cors.dll
-C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\System.Web.Http.Cors.dll
-C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\System.Web.Http.Cors.xml
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\Microsoft.Owin.Cors.dll
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\Microsoft.Owin.Cors.xml

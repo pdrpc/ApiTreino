@@ -30,6 +30,7 @@ namespace ApiTreino
             // e um cookie que armazena informações temporárias sobre um usuário que faz login em um provedor de login de terceiros
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
 
             // Configure o aplicativo para fluxo com base em OAuth
             PublicClientId = "self";
