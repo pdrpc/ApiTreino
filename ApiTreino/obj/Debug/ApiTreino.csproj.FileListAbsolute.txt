@@ -140,3 +140,8 @@ C:\Users\pedro\source\repos\ApiTreino\ApiTreino\obj\Debug\ApiTreino.csproj.Gener
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\System.Web.Cors.dll
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\Microsoft.Owin.Cors.dll
 C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\Microsoft.Owin.Cors.xml
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\EPPlus.dll
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\System.ComponentModel.Annotations.dll
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\EPPlus.xml
+C:\Users\pedro\source\repos\ApiTreino\ApiTreino\bin\Microsoft.IO.RecyclableMemoryStream.xml
